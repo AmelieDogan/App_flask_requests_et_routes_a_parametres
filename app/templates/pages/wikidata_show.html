@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Résultat de l'API Wikidata</title>
+</head>
+
+<body>
+
+    <div>
+        <h1>Résultat de l'API Wikidata pour {{id}}</h1>
+    </div>
+    
+    <div>
+        <h2>Informations sur la requête</h2>
+        <p><b>Code HTTP :</b> {{code_http}}</p>
+        <p><b>Type de contenu :</b> {{content_type}}</p>
+    </div>
+
+    <div>
+        <h2>Données de l'entité</h2>
+        {% if data == None %}
+            <p style="color: red;">Aucune donnée valide n'a été retournée pour l'ID "{{id}}</p>
+        {% else %}
+            <pre>{{data}}</pre>
+        {% endif %}
+    </div>
+
+</body>
+
+</html>
