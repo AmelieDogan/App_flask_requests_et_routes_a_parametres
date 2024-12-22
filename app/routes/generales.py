@@ -18,15 +18,12 @@ def retrieve_wikidata(id:str):
                 'languages': 'fr'
             }
 
-    try:
-        data = requests.get(url, params=params)
-        code_http = data.status_code
-        content_type = data.headers["Content-Type"]
-        data = data.json()
-    except:
-        data = None
+    data = requests.get(url, params=params)
+    code_http = data.status_code
+    content_type = data.headers["Content-Type"]
+    data = data.json()
 
-    if 'error' in data.keys() or data == None:
+    if 'error' in data.keys():
         data = None
 
     if data is not None:
